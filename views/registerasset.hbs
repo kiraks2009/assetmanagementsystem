@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+</head>
+<body>
+    {{!-- Navigation links --}}
+    <nav>
+        <h4>Node MySQL Login</h4>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            <li><a href="/registerasset">Register Laptop</a></li>
+            <li><a href="/leaseform">Lease a laptop</a></li>
+        </ul>
+        </ul>
+    </nav>
+
+    {{!-- Body --}}
+    <div class="container mt-4">
+        <div class="card" style="width: 18rem;">            
+            <div class="card-header">Laptop Registration Form</div>    
+            <div class="card-body">
+                <form action="/auth/registerasset" method="POST">
+                    <div class="mb-3">
+                        <label for="make-reg" class="form-label">Make</label>
+                        <input type="text" class="form-control" id="make-reg" name="make">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="model-reg" class="form-label">Model</label>
+                        <input type="text" class="form-control" id="model-reg" name="model">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="serial-reg" class="form-label">Serial Number</label>
+                        <input type="text" class="form-control" id="serial-reg" name="serialno">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description-reg" class="form-label">description</label>
+                        <input type="text" class="form-control" id="description-reg" name="description">
+                    </div>
+                    <div class="mb-3">
+                        <label for="status-reg" class="form-label">status</label>
+                        <input type="text" class="form-control" id="status-reg" name="status">
+                    </div>
+                    <div class="mb-3">
+                        <label for="colour-reg" class="form-label">Colour</label>
+                        <input type="text" class="form-control" id="colour-reg" name="colour">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        {{#if message }}
+            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+        {{/if}}
+    </div>
+</body>
+</html>

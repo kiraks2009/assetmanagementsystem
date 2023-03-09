@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+</head>
+<body>
+    {{!-- Navigation links --}}
+    <nav>
+        <h4>Node MySQL Login</h4>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            <li><a href="/registerasset">Register Laptop</a></li>
+            <li><a href="/leaseform">Lease a laptop</a></li>
+        </ul>
+    </nav>
+
+    {{!-- Body --}}
+    <div class="container mt-4">
+        <div class="card" style="width: 18rem;">            
+            <div class="card-header">Register Form</div>    
+            <div class="card-body">
+                <form action="/auth/leaseform" method="POST">
+                    <div class="mb-3">
+                        <label for="business-reg" class="form-label">Business Name</label>
+                        <input type="text" class="form-control" id="business-reg" name="businessname">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact-reg" class="form-label">Contact Person</label>
+                        <input type="text" class="form-control" id="contact-reg" name="contactperson">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone-reg" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="phone-reg" name="phonenumber">
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailf-reg" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email-reg" name="email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="position-reg" class="form-label">Position/Title</label>
+                        <input type="text" class="form-control" id="position-reg" name="position">
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="department-reg" class="form-label">Department</label>
+                        <input type="text" class="form-control" id="department-reg" name="Department">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="devicetype-reg" class="form-label">Device Requested</label>
+                        <input type="text" class="form-control" id="devicetype-reg" name="devicetype">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="devicecount-reg" class="form-label">No of device</label>
+                        <input type="text" class="form-control" id="devicecount-reg" name="devicecount">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="deviceserials-reg" class="form-label">Device Serials</label>
+                        <input type="text" class="form-control" id="deviceserials-reg" name="deviceserials">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="leaseperiod-reg" class="form-label">Lease Period</label>
+                        <input type="text" class="form-control" id="leaseperiod-reg" name="leaseperiod">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="leaserate-reg" class="form-label">Device Requested</label>
+                        <input type="text" class="form-control" id="email-reg" name="email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="devicetype-reg" class="form-label">Device Requested</label>
+                        <input type="text" class="form-control" id="email-reg" name="email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="devicetype-reg" class="form-label">Device Requested</label>
+                        <input type="text" class="form-control" id="email-reg" name="email">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        {{#if message }}
+            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+        {{/if}}
+    </div>
+</body>
+</html>
